@@ -3,32 +3,32 @@
   "version": "4.0.0",
   "private": true,
   "dependencies": {
-    "@babel/core": "latest",
     "@babel/node": "latest",
     "@babel/plugin-proposal-class-properties": "latest",
-    "@babel/preset-env": "latest",
     "@babel/preset-react": "latest",
     "@material-ui/core": "latest",
-    "babel-loader": "latest",
     "cross-env": "latest",
     "express": "latest",
     "nodemon": "latest",
     "npm-run-all": "latest",
     "react": "latest",
-    "react-dom": "latest",
-    "webpack": "latest",
-    "webpack-cli": "latest"
+    "react-dom": "latest"
   },
   "scripts": {
-    "start": "npm-run-all -p build serve",
-    "build": "webpack -w",
+    "start": "npm run serve && webpack -w",
+    "build": "npm run build",
     "serve": "nodemon --ignore ./build --exec babel-node -- server.js",
     "production": "cross-env NODE_ENV=production npm start",
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "babel-loader": "^8.2.2",
     "file-loader": "^6.2.0",
     "svg-inline-loader": "^0.8.2",
-    "svg-url-loader": "^7.1.1"
+    "svg-url-loader": "^7.1.1",
+    "webpack": "^5.20.1",
+    "webpack-cli": "^4.5.0"
   }
 }
