@@ -9,6 +9,7 @@
     "@material-ui/core": "latest",
     "babel-loader": "latest",
     "cross-env": "latest",
+    "dotenv": "^8.2.0",
     "express": "latest",
     "nodemon": "latest",
     "npm-run-all": "latest",
@@ -20,7 +21,8 @@
     "start": "npm run serve",
     "build": "webpack -w",
     "postinstall": "rm -rf node_modules && npm install --unsafe-perm --build-from-source --no-optional --no-audit",
-    "serve": "nodemon --ignore ./build --exec babel-node -- server.js",
+    "serve": "nodemon -r dotenv/config --ignore ./build --exec babel-node -- server.js",
+    "dev": "npm run build && npm run start",
     "production": "cross-env NODE_ENV=production npm start",
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
   },
