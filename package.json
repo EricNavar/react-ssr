@@ -20,6 +20,7 @@
   "scripts": {
     "start": "npm run serve",
     "build": "webpack -w",
+    "postinstall": "npm install --unsafe-perm --build-from-source --no-optional --no-audit",
     "serve": "nodemon -r dotenv/config --ignore ./build --exec babel-node -- server.js",
     "dev": "npm run build && npm run start",
     "production": "cross-env NODE_ENV=production npm start",
