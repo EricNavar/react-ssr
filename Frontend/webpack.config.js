@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   entry: './client.js',
   devtool: 'inline-source-map',
-  mode: process.env.NODE_ENV || 'development',
+  mode: process.env.NODE_ENV || 'production',
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
@@ -29,6 +29,17 @@ module.exports = {
         loader: 'file-loader'
       },
       { test: /\$/, use: 'ts-loader' },
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            "presets": [["@babel/preset-react", {"modules": true}], "@babel/preset-env"],
+            "plugins": ["@babel/plugin-proposal-class-properties","babel-plugin-dev-expression"]
+          }
+        }
+      }
     ],
   },
   resolve: {
