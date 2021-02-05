@@ -3,7 +3,7 @@
   "version": "4.0.0",
   "private": true,
   "scripts": {
-    "start": "cd Frontend && npm run serve",
+    "start": "cd Frontend && npm run start",
     "build": "cd Frontend && npm run build",
     "postinstall": "cd Frontend && npm install --unsafe-perm --build-from-source --no-optional --no-audit",
     "serve": "cd Frontend && nodemon -r dotenv/config --ignore ./build --exec babel-node -- server.js",
