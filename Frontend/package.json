@@ -5,7 +5,6 @@
   "dependencies": {
     "@babel/node": "latest",
     "@babel/plugin-proposal-class-properties": "latest",
-    "@babel/preset-react": "latest",
     "@material-ui/core": "latest",
     "babel-loader": "latest",
     "cross-env": "latest",
@@ -14,8 +13,7 @@
     "nodemon": "latest",
     "npm-run-all": "latest",
     "react": "latest",
-    "react-dom": "latest",
-    "webpack": "latest"
+    "react-dom": "latest"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -25,8 +23,10 @@
   "devDependencies": {
     "@babel/core": "^7.12.13",
     "@babel/preset-env": "^7.12.13",
+    "@babel/preset-react": "^7.12.13",
     "babel-loader": "^8.2.2",
     "file-loader": "^6.2.0",
-    "webpack": "^5.20.1"
+    "webpack": "^5.20.2",
+    "webpack-cli": "^4.5.0"
   }
 }
