@@ -2,35 +2,13 @@
   "name": "ssr",
   "version": "4.0.0",
   "private": true,
-  "dependencies": {
-    "@babel/node": "latest",
-    "@babel/plugin-proposal-class-properties": "latest",
-    "@babel/preset-react": "latest",
-    "@material-ui/core": "latest",
-    "babel-loader": "latest",
-    "cross-env": "latest",
-    "dotenv": "^8.2.0",
-    "express": "latest",
-    "nodemon": "latest",
-    "npm-run-all": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "webpack": "latest"
-  },
   "scripts": {
-    "start": "npm run serve",
-    "build": "webpack -w",
-    "postinstall": "",
-    "serve": "nodemon -r dotenv/config --ignore ./build --exec babel-node -- server.js",
-    "dev": "npm run build && npm run start",
+    "start": "cd Frontend && npm run serve",
+    "build": "cd Frontend && webpack -w",
+    "postinstall": "cd Frontend && rm -rf node_modules && npm install --unsafe-perm --build-from-source --no-optional --no-audit",
+    "serve": "cd Frontend && nodemon -r dotenv/config --ignore ./build --exec babel-node -- server.js",
+    "dev": "cd Frontend && npm run build && npm run start",
     "production": "cross-env NODE_ENV=production npm start",
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.12.13",
-    "@babel/preset-env": "^7.12.13",
-    "babel-loader": "^8.2.2",
-    "file-loader": "^6.2.0",
-    "webpack": "^5.20.1"
   }
 }

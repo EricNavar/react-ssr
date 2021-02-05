@@ -1,0 +1,31 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "@babel/node": "latest",
+    "@babel/plugin-proposal-class-properties": "latest",
+    "@babel/preset-react": "latest",
+    "@material-ui/core": "latest",
+    "babel-loader": "latest",
+    "cross-env": "latest",
+    "dotenv": "^8.2.0",
+    "express": "latest",
+    "nodemon": "latest",
+    "npm-run-all": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "webpack": "latest"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "babel-loader": "^8.2.2",
+    "file-loader": "^6.2.0",
+    "webpack": "^5.20.1"
+  }
+}
